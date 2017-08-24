@@ -74,50 +74,50 @@ dependencies {
     compile "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
     compile "com.android.support:design:$SUPPORT_LIBRARY_VERSION"
 
-    // RxLifecycle
-    // 滑动返回 https://oss.sonatype.org/content/repositories/snapshots/com/r0adkll/slidableactivity/
-    // MD dialog
-    // 调试工具
-    // okhttp 3
-    // 简化版 Adapter
-    // 解析JSON,注解
-    // 强大的log
-    // 图片加载
-    // RxBinding
-    // RxJava 2
-    // retrofit 2
-    // 持久化 Cookie
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
-    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
-    compile 'com.r0adkll:slidableactivity:2.0.7-SNAPSHOT'
-    compile 'com.afollestad.material-dialogs:commons:0.9.4.4'
-    compile 'com.squareup.okhttp3:okhttp:3.7.0'
-    compile 'me.drakeet.multitype:multitype:3.0.0'
+    // 解析JSON
     compile 'com.google.code.gson:gson:2.8.0'
-    compile 'com.orhanobut:logger:2.1.1'
+    // 图片加载
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
-    compile 'io.reactivex.rxjava2:rxjava:2.0.9'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    // 解析HTML
+    compile 'org.jsoup:jsoup:1.10.1'
+    // 图片浏览
+    compile 'com.github.chrisbanes.photoview:library:1.2.4'
+    // 协议Dialog
+    compile 'de.psdev.licensesdialog:licensesdialog:1.8.2'
+    // 节操播放器
+    compile 'fm.jiecao:jiecaovideoplayer:5.7'
+    // retrofit 2
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    // 持久化 Cookie
     compile 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
-    testCompile 'junit:junit:4.12'
-    debugCompile 'com.facebook.stetho:stetho:1.5.0'
+    // RxJava 2
+    compile 'io.reactivex.rxjava2:rxjava:2.0.9'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    // RxLifecycle
+    compile 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
+    // okhttp 3
+    compile 'com.squareup.okhttp3:okhttp:3.7.0'
     debugCompile 'com.squareup.okhttp3:logging-interceptor:3.7.0'
-    // 节操播放器
-    compile 'fm.jiecao:jiecaovideoplayer:5.7'
-    // 图片浏览
-    compile 'com.github.chrisbanes.photoview:library:1.2.4'
+    // MD dialog
+    compile 'com.afollestad.material-dialogs:commons:0.9.4.4'
     // 权限管理
     compile('com.github.hotchemi:permissionsdispatcher:2.4.0') { exclude module: 'support-v13' }
     annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.4.0'
-    // 解析HTML
-    compile 'org.jsoup:jsoup:1.10.1'
-    // 协议Dialog
-    compile 'de.psdev.licensesdialog:licensesdialog:1.8.2'
+    // 调试工具
+    debugCompile 'com.facebook.stetho:stetho:1.5.0'
+    testCompile 'junit:junit:4.12'
+    // 简化版 Adapter
+    compile 'me.drakeet.multitype:multitype:3.0.0'
+    // RxBinding
+    compile 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
     // 响应式排版布局
     compile 'com.google.android:flexbox:0.2.7'
+    // 滑动返回 https://oss.sonatype.org/content/repositories/snapshots/com/r0adkll/slidableactivity/
+    compile 'com.r0adkll:slidableactivity:2.0.7-SNAPSHOT'
+    // 强大的log
+    compile 'com.orhanobut:logger:2.1.1'
+
 }
