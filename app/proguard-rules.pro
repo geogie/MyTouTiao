@@ -23,3 +23,12 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class !android.support.v7.internal.view.menu.**,** {*;}
+-dontwarn okio.**
+-dontwarn com.google.gson.stream**
+-ignorewarnings
+
+-keepclassmembers class android.support.design.internal.BottomNavigationMenuView {
+    boolean mShiftingMode;
+}
