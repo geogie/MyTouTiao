@@ -159,7 +159,6 @@ public class SearchArticleVideoViewBinder extends ItemViewBinder<MultiNewsArticl
                             if (!TextUtils.isEmpty(content)) {
                                 Map<String, String> map = parseJson(content);
                                 String id = map.get("id");
-                                String imageUrl = map.get("imageUrl");
                                 item.setVideo_id(id);
                                 MultiNewsArticleDataBean.VideoDetailInfoBean.DetailVideoLargeImageBean videobean = new MultiNewsArticleDataBean.VideoDetailInfoBean.DetailVideoLargeImageBean();
                                 MultiNewsArticleDataBean.VideoDetailInfoBean videoDetail = new MultiNewsArticleDataBean.VideoDetailInfoBean();
@@ -207,6 +206,11 @@ public class SearchArticleVideoViewBinder extends ItemViewBinder<MultiNewsArticl
         }
     }
 
+    /**
+     * jsoup 使用
+     * @param content
+     * @return
+     */
     private Map<String, String> parseJson(String content) {
         Document doc = Jsoup.parse(content);
         Elements elements = doc.getElementsByClass("tt-video-box");
