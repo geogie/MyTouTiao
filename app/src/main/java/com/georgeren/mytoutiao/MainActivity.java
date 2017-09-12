@@ -73,12 +73,16 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         outState.putInt(POSITION, position);
     }
 
-
+    /**
+     * bottomNavigation 反射修改 item>3 的bug
+     * item点击监听
+     *
+     */
     private void initView() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        bottom_navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-        BottomNavigationViewHelper.disableShiftMode(bottom_navigation);
         setSupportActionBar(toolbar);
+        bottom_navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        BottomNavigationViewHelper.disableShiftMode(bottom_navigation);// 解决 item>3 ui难看问题
         bottom_navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

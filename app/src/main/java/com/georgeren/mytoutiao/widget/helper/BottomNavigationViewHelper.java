@@ -12,10 +12,17 @@ import java.lang.reflect.Field;
  */
 
 public class BottomNavigationViewHelper {
+    /**
+     * 解决系统bug:item一旦大于3个时，就只显示选中的item了，其他的变很小，而且没有显示标题，切换的时候，也十分夸张，显得很别扭
+     * http://blog.csdn.net/aiynmimi/article/details/72967585
+     * 反射成员变量 BottomNavigationItemView 中的私有成员变量mShiftingMode---》修改成false
+     *
+     * @param view
+     */
     public static void disableShiftMode(BottomNavigationView view) {
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
         try {
-            Field shiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");
+            Field shiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");// 反射获取对象成员的字段值
             shiftingMode.setAccessible(true);
             shiftingMode.setBoolean(menuView, false);
             shiftingMode.setAccessible(false);

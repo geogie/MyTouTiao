@@ -25,8 +25,6 @@ import java.util.List;
  */
 
 public class PhotoTabLayout extends Fragment{
-
-    private static final String TAG = "PhotoTabLayout";
     private static PhotoTabLayout instance = null;
     private static int pageSize = InitApp.AppContext.getResources().getStringArray(R.array.photo_id).length;
     private String categoryId[] = InitApp.AppContext.getResources().getStringArray(R.array.photo_id);
@@ -55,21 +53,25 @@ public class PhotoTabLayout extends Fragment{
     @Override
     public void onResume() {
         super.onResume();
-        tabLayout.setBackgroundColor(SettingUtil.getInstance().getColor());
+        tabLayout.setBackgroundColor(SettingUtil.getInstance().getColor());// 主题修改后可以很快的修改背景色
     }
 
     private void initView(View view) {
         tabLayout = view.findViewById(R.id.tab_layout_photo);
         viewPager = view.findViewById(R.id.view_pager_photo);
 
-        tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        tabLayout.setupWithViewPager(viewPager);// tab和viewPager进行联系
+        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);// 设置滑动模式
         tabLayout.setBackgroundColor(SettingUtil.getInstance().getColor());
-        viewPager.setOffscreenPageLimit(pageSize);
+        viewPager.setOffscreenPageLimit(pageSize);// 允许最多缓存的pager数
     }
 
+    /**
+     * 根据 category 初始化 fragments
+     * 初始化 viewpager 的 adapter，设置adapter
+     */
     private void initData() {
-        for (int i = 0; i < categoryId.length; i++) {
+        for (int i = 0; i < categoryId.length; i++) {// 根据category的个数来初始化fragment的个数
             Fragment fragment = PhotoArticleView.newInstance(categoryId[i]);
             fragmentList.add(fragment);
         }
